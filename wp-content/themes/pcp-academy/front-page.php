@@ -616,7 +616,7 @@ footer {
     <p>Twelve lessons. Four modules. Lifetime access. Filmed where padel grew up.</p>
     <div class="final-cta-actions">
       <a href="<?php echo esc_url(home_url('/course/')); ?>" class="btn btn-primary btn-large">Enrol for €59.95 <span class="arrow">→</span></a>
-      <a href="#" class="btn btn-ghost btn-large">Try the first lesson free</a>
+      <a href="<?php echo esc_url(home_url('/school/')); ?>" class="btn btn-ghost btn-large">Try the first lesson free</a>
     </div>
     <div class="trust-strip">
       <div class="trust-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Secure payment</div>
@@ -639,7 +639,7 @@ footer {
         <li><a href="<?php echo esc_url(home_url('/course/')); ?>">Initiation course</a></li>
         <li><a href="<?php echo esc_url(home_url('/coach/')); ?>">The coach</a></li>
         <li><a href="<?php echo esc_url(home_url('/stories/')); ?>">Student stories</a></li>
-        <li><a href="#">Free first lesson</a></li>
+        <li><a href="<?php echo esc_url(home_url('/school/')); ?>">Free first lesson</a></li>
       </ul></div>
       <div class="footer-col"><h4>Palm Coast</h4><ul>
         <li><a href="<?php echo esc_url(home_url('/about/')); ?>">About the academy</a></li>

@@ -403,7 +403,7 @@ footer {
     </nav>
     <div class="top-right">
       <div class="lang"><button class="current">EN</button><button>ES</button><button>FR</button></div>
-      <a href="#enrol" class="btn btn-primary">Enrol now <span class="arrow">→</span></a>
+      <a href="<?php echo esc_url(home_url('/school/')); ?>" class="btn btn-primary">Enrol now <span class="arrow">→</span></a>
     </div>
   </div>
 </header>
@@ -428,7 +428,7 @@ footer {
       </div>
 
       <div class="course-hero-actions">
-        <a href="#enrol" class="btn btn-primary btn-large">Enrol now <span class="arrow">→</span></a>
+        <a href="<?php echo esc_url(home_url('/school/')); ?>" class="btn btn-primary btn-large">Enrol now <span class="arrow">→</span></a>
         <a href="#preview" class="btn btn-ghost btn-large">Watch lesson 1 free</a>
       </div>
     </div>
@@ -643,7 +643,7 @@ footer {
     <h2 class="section-title" style="margin-left: auto; margin-right: auto;">€<em>59.95</em>. Lifetime access. <em>Start today</em>.</h2>
     <p class="section-lead" style="margin-left: auto; margin-right: auto; text-align: center;">One payment, twelve lessons, every drill demonstrated on a real court in Marbella.</p>
     <div style="margin-top: 40px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-      <a href="#" class="btn btn-primary btn-large">Enrol now for €59.95 <span class="arrow">→</span></a>
+      <a href="<?php echo esc_url(home_url('/school/')); ?>" class="btn btn-primary btn-large">Enrol now for €59.95 <span class="arrow">→</span></a>
       <a href="#preview" class="btn btn-ghost btn-large" style="border-color: var(--cream); color: var(--cream);">Watch lesson 1 free</a>
     </div>
   </div>
@@ -655,7 +655,7 @@ footer {
     <span class="price">€59.95</span>
     <span class="label">Lifetime access · Three languages</span>
   </div>
-  <a href="#enrol" class="btn btn-primary">Enrol now <span class="arrow">→</span></a>
+  <a href="<?php echo esc_url(home_url('/school/')); ?>" class="btn btn-primary">Enrol now <span class="arrow">→</span></a>
 </div>
 
 <footer>
@@ -669,7 +669,7 @@ footer {
         <li><a href="<?php echo esc_url(home_url('/course/')); ?>">Initiation course</a></li>
         <li><a href="<?php echo esc_url(home_url('/coach/')); ?>">The coach</a></li>
         <li><a href="<?php echo esc_url(home_url('/stories/')); ?>">Student stories</a></li>
-        <li><a href="#">Free first lesson</a></li>
+        <li><a href="<?php echo esc_url(home_url('/school/')); ?>">Free first lesson</a></li>
       </ul></div>
       <div class="footer-col"><h4>Palm Coast</h4><ul>
         <li><a href="<?php echo esc_url(home_url('/about/')); ?>">About the academy</a></li>

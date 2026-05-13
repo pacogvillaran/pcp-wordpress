@@ -564,7 +564,7 @@ footer {
         <li><a href="<?php echo esc_url(home_url('/course/')); ?>">Initiation course</a></li>
         <li><a href="<?php echo esc_url(home_url('/coach/')); ?>">The coach</a></li>
         <li><a href="<?php echo esc_url(home_url('/stories/')); ?>">Student stories</a></li>
-        <li><a href="#">Free first lesson</a></li>
+        <li><a href="<?php echo esc_url(home_url('/school/')); ?>">Free first lesson</a></li>
       </ul></div>
       <div class="footer-col"><h4>Palm Coast</h4><ul>
         <li><a href="<?php echo esc_url(home_url('/about/')); ?>">About the academy</a></li>

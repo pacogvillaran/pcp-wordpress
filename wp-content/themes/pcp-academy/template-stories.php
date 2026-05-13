@@ -642,7 +642,7 @@ footer {
     <p class="section-lead" style="margin-left: auto; margin-right: auto; text-align: center;">Twelve lessons. Four modules. Lifetime access. Filmed in Marbella, taught by Yannik.</p>
     <div style="margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
       <a href="<?php echo esc_url(home_url('/course/')); ?>" class="btn btn-primary btn-large">Enrol for €59.95 <span class="arrow">→</span></a>
-      <a href="#" class="btn btn-ghost btn-large" style="border-color: var(--cream); color: var(--cream);">Try the first lesson free</a>
+      <a href="<?php echo esc_url(home_url('/school/')); ?>" class="btn btn-ghost btn-large" style="border-color: var(--cream); color: var(--cream);">Try the first lesson free</a>
     </div>
   </div>
 </section>
@@ -658,7 +658,7 @@ footer {
         <li><a href="<?php echo esc_url(home_url('/course/')); ?>">Initiation course</a></li>
         <li><a href="<?php echo esc_url(home_url('/coach/')); ?>">The coach</a></li>
         <li><a href="<?php echo esc_url(home_url('/stories/')); ?>">Student stories</a></li>
-        <li><a href="#">Free first lesson</a></li>
+        <li><a href="<?php echo esc_url(home_url('/school/')); ?>">Free first lesson</a></li>
       </ul></div>
       <div class="footer-col"><h4>Palm Coast</h4><ul>
         <li><a href="<?php echo esc_url(home_url('/about/')); ?>">About the academy</a></li>

@@ -1,0 +1,54 @@
+name: Deploy WordPress assets to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "wp-content/themes/pcp-academy/**"
+      - "wp-content/plugins/pcp-learnworlds-bridge/**"
+      - ".github/workflows/deploy-hostinger-sftp.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: hostinger-sftp-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Upload theme and plugin
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install SFTP client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
+      - name: Deploy via SFTP
+        env:
+          SFTP_HOST: ${{ secrets.HOSTINGER_SFTP_HOST }}
+          SFTP_PORT: ${{ secrets.HOSTINGER_SFTP_PORT }}
+          SFTP_USER: ${{ secrets.HOSTINGER_SFTP_USER }}
+          SFTP_PASSWORD: ${{ secrets.HOSTINGER_SFTP_PASSWORD }}
+          REMOTE_PATH: ${{ secrets.HOSTINGER_REMOTE_PATH }}
+        run: |
+          : "${SFTP_HOST:?Missing HOSTINGER_SFTP_HOST secret}"
+          : "${SFTP_PORT:?Missing HOSTINGER_SFTP_PORT secret}"
+          : "${SFTP_USER:?Missing HOSTINGER_SFTP_USER secret}"
+          : "${SFTP_PASSWORD:?Missing HOSTINGER_SFTP_PASSWORD secret}"
+          : "${REMOTE_PATH:?Missing HOSTINGER_REMOTE_PATH secret}"
+
+          lftp -u "$SFTP_USER","$SFTP_PASSWORD" -p "$SFTP_PORT" "sftp://$SFTP_HOST" <<EOF
+          set sftp:auto-confirm yes
+          set net:max-retries 2
+          set net:timeout 30
+          mkdir -p "$REMOTE_PATH/wp-content/themes/pcp-academy"
+          mkdir -p "$REMOTE_PATH/wp-content/plugins/pcp-learnworlds-bridge"
+          mirror -R --delete --verbose "wp-content/themes/pcp-academy" "$REMOTE_PATH/wp-content/themes/pcp-academy"
+          mirror -R --delete --verbose "wp-content/plugins/pcp-learnworlds-bridge" "$REMOTE_PATH/wp-content/plugins/pcp-learnworlds-bridge"
+          bye
+          EOF

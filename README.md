@@ -15,7 +15,26 @@ This repository contains a WordPress-ready theme and plugin generated from the p
 - `LearnWorlds Wrapper` page template (`template-learnworlds-wrapper.php`)
 - Plugin setting at `Settings > PCP LearnWorlds` for school URL
 
-## Hostinger deployment (recommended)
+## Hostinger deployment with GitHub Actions
+
+This repo deploys only the WordPress theme and plugin folders via SFTP.
+
+Create these GitHub repository secrets in `Settings > Secrets and variables > Actions`:
+
+- `HOSTINGER_SFTP_HOST`: Hostinger SFTP host, often your server IP or domain.
+- `HOSTINGER_SFTP_PORT`: Hostinger SFTP port, often `65002` on Hostinger.
+- `HOSTINGER_SFTP_USER`: Hostinger SFTP/SSH username.
+- `HOSTINGER_SFTP_PASSWORD`: Hostinger SFTP/SSH password.
+- `HOSTINGER_REMOTE_PATH`: Path to the live WordPress install, usually `/home/<hostinger-user>/domains/<domain>/public_html` or `/home/<hostinger-user>/public_html`.
+
+The workflow uploads:
+
+- `wp-content/themes/pcp-academy` to `$HOSTINGER_REMOTE_PATH/wp-content/themes/pcp-academy`
+- `wp-content/plugins/pcp-learnworlds-bridge` to `$HOSTINGER_REMOTE_PATH/wp-content/plugins/pcp-learnworlds-bridge`
+
+It runs automatically on pushes to `main` that change those folders. You can also run it manually from `Actions > Deploy WordPress assets to Hostinger > Run workflow`.
+
+## Manual Hostinger deployment
 
 1. In Hostinger hPanel, create or open your WordPress install for `palmcoastpadelacademy.com`.
 2. Upload theme folder `pcp-academy` into `wp-content/themes/`.
@@ -49,4 +68,3 @@ This repository contains a WordPress-ready theme and plugin generated from the p
 ## Optional Git sync with Hostinger
 
 If you use Hostinger Git deployment, initialize this folder as a Git repo and connect to Hostinger deployment target.
-

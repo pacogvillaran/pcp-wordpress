@@ -9,7 +9,6 @@ get_header();
 ?>
 
 <style>
-
 :root {
   --cream: #F5EFE2;
   --cream-soft: #EDE5D2;
@@ -215,7 +214,6 @@ footer { background: var(--court-deep); color: var(--cream); padding: 80px 0 32p
   .final-cta { padding: 80px 0; }
 }
 @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
-
 </style>
 
 
@@ -465,6 +463,7 @@ footer { background: var(--court-deep); color: var(--cream); padding: 80px 0 32p
     </div>
   </div>
 </footer>
+
 
 
 <?php

@@ -9,7 +9,6 @@ get_header();
 ?>
 
 <style>
-
 /* ============================================================
    PALM COAST PADEL ACADEMY, design system
    Built by Nimlo, April 2026
@@ -385,7 +384,69 @@ footer {
   .footer-grid { grid-template-columns: 1fr; }
 }
 
+</style>
 
+<style>
+.coach-hero { background: var(--court-deep); color: var(--cream); padding: 80px 0 100px; }
+.coach-hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 80px; align-items: end; }
+.coach-hero-eyebrow { display: flex; align-items: center; gap: 14px; font-size: 11px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--clay); margin-bottom: 28px; }
+.coach-hero-eyebrow span { width: 32px; height: 1px; background: var(--clay); display: inline-block; }
+h1.coach-h1 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(56px, 8vw, 120px); line-height: 0.92; letter-spacing: -0.03em; color: var(--cream); margin-bottom: 28px; }
+h1.coach-h1 em { font-style: italic; font-weight: 300; color: var(--clay); }
+.coach-hero-role { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 24px; color: rgba(245, 239, 226, 0.75); line-height: 1.3; max-width: 520px; }
+
+.coach-hero-portrait { position: relative; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; background: linear-gradient(165deg, #BD6F4E 0%, #9C5538 50%, #2D4A3E 100%); }
+.coach-hero-portrait::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 25%, rgba(245, 239, 226, 0.2) 0%, transparent 60%), radial-gradient(circle at 30% 90%, rgba(26, 24, 21, 0.4) 0%, transparent 50%); }
+.coach-hero-portrait::after { content: "Y.M."; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Fraunces', serif; font-style: italic; font-size: 120px; color: var(--cream); opacity: 0.4; letter-spacing: 0.02em; }
+.coach-hero-portrait-label { position: absolute; bottom: 28px; left: 28px; right: 28px; display: flex; justify-content: space-between; color: var(--cream); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.7; }
+
+/* numbers strip */
+.numbers-strip { background: var(--cream-soft); border-bottom: 1px solid var(--line); padding: 48px 0; }
+.numbers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px; }
+.number-item { text-align: left; }
+.number-item .num { font-family: 'Fraunces', serif; font-size: 64px; font-weight: 300; line-height: 1; color: var(--court-deep); letter-spacing: -0.02em; }
+.number-item .num em { font-style: italic; color: var(--clay); }
+.number-item .lbl { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); margin-top: 12px; font-weight: 600; }
+
+/* bio chapters */
+.bio-chapter { padding: 100px 0; border-bottom: 1px solid var(--line); }
+.bio-chapter:last-of-type { border-bottom: none; }
+.bio-chapter-grid { display: grid; grid-template-columns: 280px 1fr; gap: 80px; align-items: start; }
+.bio-chapter-meta { position: sticky; top: 120px; }
+.bio-chapter-num { font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: var(--clay); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+.bio-chapter-title { font-family: 'Fraunces', serif; font-weight: 400; font-size: 28px; color: var(--court-deep); line-height: 1.15; letter-spacing: -0.015em; }
+.bio-chapter-title em { font-style: italic; color: var(--clay); }
+.bio-chapter-body { font-size: 17px; line-height: 1.75; color: var(--ink); }
+.bio-chapter-body p { margin-bottom: 24px; }
+.bio-chapter-body p:first-letter { font-family: 'Fraunces', serif; font-size: 56px; line-height: 0.9; float: left; padding: 6px 14px 0 0; color: var(--clay); font-weight: 400; }
+.bio-chapter-body p:not(:first-of-type):first-letter { font-size: inherit; line-height: inherit; float: none; padding: 0; color: inherit; font-weight: inherit; }
+
+/* manifesto pull */
+.manifesto { padding: 140px 0; background: var(--court-deep); color: var(--cream); text-align: center; }
+.manifesto-text { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: clamp(32px, 4vw, 56px); line-height: 1.25; color: var(--cream); letter-spacing: -0.015em; max-width: 1000px; margin: 0 auto; }
+.manifesto-text em { color: var(--clay); }
+.manifesto-attribution { margin-top: 40px; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245, 239, 226, 0.6); font-weight: 600; }
+
+/* full credentials */
+.credentials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin-top: 64px; border: 1px solid var(--line); }
+.cred-item { padding: 36px 32px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.cred-item:nth-child(2n) { border-right: none; }
+.cred-item:nth-last-child(-n+2) { border-bottom: none; }
+.cred-item .lbl { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--clay); font-weight: 700; margin-bottom: 14px; }
+.cred-item .val { font-family: 'Fraunces', serif; font-size: 22px; color: var(--court-deep); line-height: 1.3; font-weight: 400; }
+.cred-item .val em { font-style: italic; color: var(--clay); }
+.cred-item .sub { font-size: 13px; color: var(--ink-soft); margin-top: 10px; line-height: 1.5; }
+
+@media (max-width: 980px) {
+  .coach-hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .numbers-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .bio-chapter-grid { grid-template-columns: 1fr; gap: 24px; }
+  .bio-chapter-meta { position: static; }
+  .bio-chapter { padding: 64px 0; }
+  .credentials-grid { grid-template-columns: 1fr; }
+  .cred-item { border-right: none; }
+  .cred-item:nth-last-child(-n+2):not(:last-child) { border-bottom: 1px solid var(--line); }
+}
 </style>
 
 
@@ -590,6 +651,7 @@ footer {
     </div>
   </div>
 </footer>
+
 
 
 <?php

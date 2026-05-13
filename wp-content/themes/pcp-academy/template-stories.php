@@ -9,7 +9,6 @@ get_header();
 ?>
 
 <style>
-
 /* ============================================================
    PALM COAST PADEL ACADEMY, design system
    Built by Nimlo, April 2026
@@ -385,7 +384,75 @@ footer {
   .footer-grid { grid-template-columns: 1fr; }
 }
 
+</style>
 
+<style>
+/* featured story */
+.featured-story { background: var(--court-deep); color: var(--cream); padding: 100px 0; }
+.featured-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
+.featured-visual { position: relative; aspect-ratio: 1/1.1; border-radius: 4px; overflow: hidden; background: linear-gradient(165deg, #BD6F4E 0%, #9C5538 50%, #2D4A3E 100%); }
+.featured-visual::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 30%, rgba(245, 239, 226, 0.2) 0%, transparent 60%), radial-gradient(circle at 30% 90%, rgba(26, 24, 21, 0.4) 0%, transparent 50%); }
+.featured-visual::after { content: "L.A."; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Fraunces', serif; font-style: italic; font-size: 100px; color: var(--cream); opacity: 0.4; letter-spacing: 0.02em; }
+.featured-tag { position: absolute; top: 24px; left: 24px; background: var(--clay); color: var(--cream); padding: 8px 14px; border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+.featured-meta-tag { position: absolute; bottom: 24px; left: 24px; right: 24px; display: flex; justify-content: space-between; color: var(--cream); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.75; }
+
+.featured-content .eyebrow { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--clay); font-weight: 700; margin-bottom: 24px; }
+.featured-content h2 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(36px, 4.5vw, 56px); line-height: 1.05; letter-spacing: -0.02em; color: var(--cream); margin-bottom: 24px; }
+.featured-content h2 em { font-style: italic; color: var(--clay); font-weight: 300; }
+.featured-content .lede { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 22px; line-height: 1.4; color: rgba(245, 239, 226, 0.85); margin-bottom: 24px; }
+.featured-content p { font-size: 16px; line-height: 1.7; color: rgba(245, 239, 226, 0.78); margin-bottom: 18px; }
+.featured-byline { margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(245, 239, 226, 0.2); display: flex; gap: 32px; flex-wrap: wrap; font-size: 12px; color: rgba(245, 239, 226, 0.6); letter-spacing: 0.05em; }
+.featured-byline span strong { display: block; font-family: 'Fraunces', serif; font-size: 16px; font-weight: 500; color: var(--cream); margin-bottom: 4px; letter-spacing: 0; text-transform: none; }
+
+/* stats overview */
+.stats-overview { background: var(--cream-soft); padding: 56px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.stats-overview-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+.stat-item { display: flex; flex-direction: column; }
+.stat-item .num { font-family: 'Fraunces', serif; font-size: 48px; font-weight: 300; line-height: 1; color: var(--court-deep); letter-spacing: -0.02em; }
+.stat-item .num em { font-style: italic; color: var(--clay); }
+.stat-item .lbl { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); margin-top: 12px; font-weight: 600; }
+
+/* stories grid */
+.stories-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 60px; }
+.story-card { background: var(--cream); border: 1px solid var(--line); border-radius: 4px; padding: 40px; transition: transform 0.3s, box-shadow 0.3s; }
+.story-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px -20px rgba(26, 44, 36, 0.2); }
+.story-head { display: flex; gap: 16px; margin-bottom: 24px; align-items: center; }
+.story-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--clay) 0%, var(--court) 100%); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-style: italic; font-size: 24px; color: var(--cream); flex-shrink: 0; }
+.story-meta .name { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; color: var(--court-deep); line-height: 1.1; margin-bottom: 6px; letter-spacing: -0.01em; }
+.story-meta .place { font-size: 12px; color: var(--ink-soft); letter-spacing: 0.05em; }
+.story-meta .place strong { color: var(--clay); font-weight: 600; }
+.story-quote { font-family: 'Fraunces', serif; font-size: 18px; line-height: 1.55; color: var(--ink); font-weight: 400; margin-bottom: 24px; }
+.story-quote em { font-style: italic; color: var(--clay); }
+.story-detail { font-size: 14px; line-height: 1.65; color: var(--ink-soft); margin-bottom: 24px; }
+.story-result { padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+.story-result .lhs { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+.story-result .rhs { font-family: 'Fraunces', serif; font-style: italic; font-size: 16px; color: var(--court); font-weight: 500; }
+
+/* video stories */
+.video-stories { padding: 100px 0; background: var(--cream-soft); }
+.video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+.video-card { position: relative; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; cursor: pointer; transition: transform 0.3s; background: linear-gradient(165deg, #4A6B5C 0%, #2D4A3E 70%, #1A2C24 100%); }
+.video-card:hover { transform: translateY(-4px); }
+.video-card.alt-1 { background: linear-gradient(165deg, #BD6F4E 0%, #9C5538 70%, #2D4A3E 100%); }
+.video-card.alt-2 { background: linear-gradient(165deg, #E0D2B4 0%, #BD6F4E 70%, #9C5538 100%); }
+.video-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.4) 100%); }
+.video-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 64px; height: 64px; background: rgba(245, 239, 226, 0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.25s; }
+.video-card:hover .video-play { background: var(--clay); }
+.video-card:hover .video-play svg { color: var(--cream); }
+.video-meta { position: absolute; bottom: 24px; left: 24px; right: 24px; color: var(--cream); z-index: 2; }
+.video-meta .name { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400; margin-bottom: 4px; }
+.video-meta .name em { font-style: italic; color: var(--clay); }
+.video-meta .sub { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.75; }
+.video-duration { position: absolute; top: 16px; right: 16px; background: rgba(26, 24, 21, 0.7); color: var(--cream); padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; backdrop-filter: blur(8px); }
+
+@media (max-width: 980px) {
+  .featured-grid { grid-template-columns: 1fr; gap: 48px; }
+  .stats-overview-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .stories-grid { grid-template-columns: 1fr; }
+  .video-grid { grid-template-columns: 1fr; }
+  .featured-story { padding: 64px 0; }
+  .video-stories { padding: 64px 0; }
+}
 </style>
 
 
@@ -642,7 +709,7 @@ footer {
     <p class="section-lead" style="margin-left: auto; margin-right: auto; text-align: center;">Twelve lessons. Four modules. Lifetime access. Filmed in Marbella, taught by Yannik.</p>
     <div style="margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
       <a href="<?php echo esc_url(home_url('/course/')); ?>" class="btn btn-primary btn-large">Enrol for €59.95 <span class="arrow">→</span></a>
-      <a href="<?php echo esc_url(home_url('/school/')); ?>" class="btn btn-ghost btn-large" style="border-color: var(--cream); color: var(--cream);">Try the first lesson free</a>
+      <a href="#" class="btn btn-ghost btn-large" style="border-color: var(--cream); color: var(--cream);">Try the first lesson free</a>
     </div>
   </div>
 </section>
@@ -684,6 +751,7 @@ footer {
     </div>
   </div>
 </footer>
+
 
 
 <?php

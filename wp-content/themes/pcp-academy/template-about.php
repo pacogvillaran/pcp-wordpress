@@ -9,7 +9,6 @@ get_header();
 ?>
 
 <style>
-
 /* ============================================================
    PALM COAST PADEL ACADEMY, design system
    Built by Nimlo, April 2026
@@ -385,7 +384,54 @@ footer {
   .footer-grid { grid-template-columns: 1fr; }
 }
 
+</style>
 
+<style>
+.about-intro { padding: 120px 0; }
+.about-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+.about-intro-text .pull { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 38px; line-height: 1.2; color: var(--clay); margin-bottom: 32px; letter-spacing: -0.01em; }
+.about-intro-text p { font-size: 16px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 18px; }
+
+.about-visual { position: relative; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; background: linear-gradient(170deg, #E0D2B4 0%, #BD6F4E 100%); }
+.about-visual::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 70%, rgba(45, 74, 62, 0.4) 0%, transparent 60%), radial-gradient(circle at 70% 20%, rgba(245, 239, 226, 0.3) 0%, transparent 50%); }
+.about-visual::after { content: "MARBELLA"; position: absolute; bottom: 32px; left: 32px; font-family: 'Fraunces', serif; font-style: italic; font-size: 64px; font-weight: 300; color: var(--cream); line-height: 1; letter-spacing: -0.01em; }
+.about-visual-coords { position: absolute; top: 32px; left: 32px; color: var(--cream); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.85; line-height: 1.6; }
+
+/* timeline */
+.timeline { margin-top: 64px; max-width: 920px; }
+.timeline-item { display: grid; grid-template-columns: 140px 1fr; gap: 60px; padding: 36px 0; border-top: 1px solid var(--line); }
+.timeline-item:last-child { border-bottom: 1px solid var(--line); }
+.timeline-year { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 32px; color: var(--clay); line-height: 1; }
+.timeline-content h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 24px; color: var(--court-deep); margin-bottom: 10px; letter-spacing: -0.01em; }
+.timeline-content p { font-size: 15px; color: var(--ink-soft); line-height: 1.7; max-width: 640px; }
+
+/* method */
+.method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 64px; }
+.method-card { padding: 36px 32px; background: var(--cream); border: 1px solid var(--line); border-radius: 4px; transition: transform 0.3s, box-shadow 0.3s; }
+.method-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px -20px rgba(26, 44, 36, 0.2); }
+.method-num { font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: var(--clay); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 18px; }
+.method-card h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 22px; color: var(--court-deep); margin-bottom: 14px; letter-spacing: -0.01em; line-height: 1.2; }
+.method-card h3 em { font-style: italic; color: var(--clay); }
+.method-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
+
+/* ecosystem */
+.ecosystem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 60px; align-items: stretch; }
+.eco-card { background: var(--cream-soft); padding: 48px; border-radius: 6px; border: 1px solid var(--line); position: relative; overflow: hidden; }
+.eco-card.dark { background: var(--court-deep); color: var(--cream); border: none; }
+.eco-card .eyebrow { font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--clay); font-weight: 700; margin-bottom: 18px; }
+.eco-card h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 32px; line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.015em; }
+.eco-card.dark h3 { color: var(--cream); }
+.eco-card h3 em { font-style: italic; color: var(--clay); }
+.eco-card p { font-size: 15px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 28px; }
+.eco-card.dark p { color: rgba(245, 239, 226, 0.78); }
+
+@media (max-width: 980px) {
+  .about-intro-grid { grid-template-columns: 1fr; gap: 56px; }
+  .timeline-item { grid-template-columns: 1fr; gap: 12px; }
+  .method-grid { grid-template-columns: 1fr; }
+  .ecosystem-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-intro { padding: 80px 0; }
+}
 </style>
 
 
@@ -567,6 +613,7 @@ footer {
     </div>
   </div>
 </footer>
+
 
 
 <?php

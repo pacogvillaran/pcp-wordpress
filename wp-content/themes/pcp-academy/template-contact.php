@@ -9,7 +9,6 @@ get_header();
 ?>
 
 <style>
-
 /* ============================================================
    PALM COAST PADEL ACADEMY, design system
    Built by Nimlo, April 2026
@@ -385,7 +384,72 @@ footer {
   .footer-grid { grid-template-columns: 1fr; }
 }
 
+</style>
 
+<style>
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; padding-top: 80px; padding-bottom: 120px; }
+
+/* contact methods */
+.methods { padding-right: 40px; }
+.method-row { padding: 28px 0; border-top: 1px solid var(--line); }
+.method-row:first-of-type { border-top: 1px solid var(--line); margin-top: 32px; }
+.method-row .lbl { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--clay); font-weight: 700; margin-bottom: 10px; }
+.method-row .val { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 400; color: var(--court-deep); line-height: 1.3; letter-spacing: -0.01em; }
+.method-row .val a:hover { color: var(--clay); }
+.method-row .val em { font-style: italic; color: var(--clay); }
+.method-row .sub { font-size: 13px; color: var(--ink-soft); margin-top: 8px; line-height: 1.5; }
+
+.location-card { margin-top: 48px; padding: 32px; background: var(--cream-soft); border: 1px solid var(--line); border-radius: 4px; }
+.location-card .lbl { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--clay); font-weight: 700; margin-bottom: 10px; }
+.location-card .val { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400; color: var(--court-deep); margin-bottom: 12px; letter-spacing: -0.01em; }
+.location-card .val em { font-style: italic; }
+.location-card p { font-size: 14px; line-height: 1.65; color: var(--ink-soft); margin-bottom: 6px; }
+.location-card .coords { font-size: 11px; letter-spacing: 0.18em; color: var(--ink-soft); margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+
+/* form */
+.contact-form-card { background: var(--cream-soft); border-radius: 6px; padding: 56px; border: 1px solid var(--line); }
+.contact-form-card .eyebrow { font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--clay); font-weight: 700; margin-bottom: 16px; }
+.contact-form-card h2 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 36px; line-height: 1.1; color: var(--court-deep); margin-bottom: 14px; letter-spacing: -0.015em; }
+.contact-form-card h2 em { font-style: italic; color: var(--clay); }
+.contact-form-card .intro { font-size: 15px; line-height: 1.65; color: var(--ink-soft); margin-bottom: 36px; }
+
+.form-field { margin-bottom: 20px; }
+.form-field label { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; margin-bottom: 8px; }
+.form-field input, .form-field select, .form-field textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid var(--mist);
+  border-radius: 4px;
+  background: var(--cream);
+  font: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  outline: none;
+  transition: border 0.2s;
+  font-family: 'Manrope', sans-serif;
+}
+.form-field textarea { min-height: 140px; resize: vertical; line-height: 1.55; }
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--court); }
+.form-field select { appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1.5L6 6.5L11 1.5' stroke='%231A2C24' stroke-width='1.5'/></svg>"); background-repeat: no-repeat; background-position: right 18px center; padding-right: 44px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-submit { margin-top: 8px; }
+.form-submit button { width: 100%; }
+.form-note { font-size: 12px; color: var(--ink-soft); margin-top: 16px; line-height: 1.55; }
+
+/* response time band */
+.response-band { background: var(--court-deep); color: var(--cream); padding: 32px 0; }
+.response-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; align-items: center; text-align: center; }
+.response-item .lbl { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--clay); font-weight: 700; margin-bottom: 8px; }
+.response-item .val { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 400; color: var(--cream); }
+.response-item .val em { font-style: italic; color: var(--clay); }
+
+@media (max-width: 980px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 56px; padding-top: 56px; padding-bottom: 80px; }
+  .methods { padding-right: 0; }
+  .contact-form-card { padding: 36px 28px; }
+  .form-row { grid-template-columns: 1fr; }
+  .response-grid { grid-template-columns: 1fr; gap: 20px; }
+}
 </style>
 
 
@@ -565,6 +629,7 @@ footer {
     </div>
   </div>
 </footer>
+
 
 
 <?php

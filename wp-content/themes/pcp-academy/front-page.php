@@ -9,7 +9,6 @@ get_header();
 ?>
 
 <style>
-
 /* ============================================================
    PALM COAST PADEL ACADEMY, design system
    Built by Nimlo, April 2026
@@ -385,7 +384,155 @@ footer {
   .footer-grid { grid-template-columns: 1fr; }
 }
 
+</style>
 
+<style>
+/* HOME ONLY */
+.hero { position: relative; padding: 80px 0 100px; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 80px; align-items: center; }
+.hero-eyebrow { display: flex; align-items: center; gap: 14px; font-size: 11px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--clay); margin-bottom: 32px; }
+.hero-eyebrow span { width: 32px; height: 1px; background: var(--clay); display: inline-block; }
+h1.hero-title { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(56px, 7vw, 104px); line-height: 0.96; letter-spacing: -0.025em; color: var(--court-deep); margin-bottom: 36px; }
+h1.hero-title em { font-style: italic; font-weight: 300; color: var(--clay); }
+.hero-sub { font-size: 18px; line-height: 1.55; color: var(--ink-soft); max-width: 480px; margin-bottom: 44px; }
+.hero-actions { display: flex; gap: 14px; align-items: center; margin-bottom: 56px; flex-wrap: wrap; }
+.hero-meta { display: grid; grid-template-columns: repeat(3, auto); gap: 36px; padding-top: 32px; border-top: 1px solid var(--line); }
+.hero-meta-item .num { font-family: 'Fraunces', serif; font-size: 32px; line-height: 1; color: var(--court-deep); font-weight: 400; }
+.hero-meta-item .num em { font-style: italic; color: var(--clay); }
+.hero-meta-item .lbl { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); margin-top: 8px; }
+
+.hero-visual { position: relative; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; background: linear-gradient(160deg, #4A6B5C 0%, #2D4A3E 60%, #1A2C24 100%); box-shadow: 0 30px 60px -20px rgba(26, 44, 36, 0.3); }
+.hero-visual::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 30% 20%, rgba(189, 111, 78, 0.4) 0%, transparent 40%), radial-gradient(circle at 70% 80%, rgba(245, 239, 226, 0.15) 0%, transparent 50%); }
+.hero-visual::after { content: ""; position: absolute; top: 50%; left: 8%; right: 8%; bottom: 8%; border: 1.5px solid rgba(245, 239, 226, 0.35); border-radius: 2px; }
+.hero-court-net { position: absolute; top: calc(50% + 8% / 2); left: 8%; right: 8%; height: 1.5px; background: rgba(245, 239, 226, 0.5); transform: translateY(-50%); }
+.hero-court-service { position: absolute; left: 50%; top: 50%; bottom: 8%; width: 1.5px; background: rgba(245, 239, 226, 0.25); transform: translateX(-50%); }
+.hero-vertical-text { position: absolute; top: 40px; right: 40px; writing-mode: vertical-rl; transform: rotate(180deg); font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: rgba(245, 239, 226, 0.7); letter-spacing: 0.3em; text-transform: uppercase; }
+.hero-stamp { position: absolute; bottom: 40px; left: 40px; color: var(--cream); }
+.hero-stamp .since { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; opacity: 0.6; margin-bottom: 4px; }
+.hero-stamp .place { font-family: 'Fraunces', serif; font-size: 24px; font-style: italic; font-weight: 300; line-height: 1; }
+.hero-tag { position: absolute; top: 40px; left: 40px; background: var(--cream); color: var(--court-deep); padding: 8px 14px; border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+
+/* COURSE FEATURE */
+.course-feature { background: var(--cream-soft); border-radius: 6px; overflow: hidden; display: grid; grid-template-columns: 1.1fr 1fr; margin-top: 64px; box-shadow: 0 20px 50px -25px rgba(26, 44, 36, 0.2); }
+.course-feature-visual { position: relative; background: linear-gradient(135deg, #BD6F4E 0%, #9C5538 100%); min-height: 540px; overflow: hidden; }
+.course-feature-visual::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 75% 25%, rgba(245, 239, 226, 0.2) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(26, 44, 36, 0.25) 0%, transparent 50%); }
+.course-feature-visual::after { content: "01"; position: absolute; top: 32px; right: 40px; font-family: 'Fraunces', serif; font-style: italic; font-size: 120px; color: rgba(245, 239, 226, 0.18); line-height: 1; font-weight: 300; }
+.visual-meta { position: absolute; bottom: 32px; left: 40px; color: var(--cream); }
+.visual-meta .row { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.7; margin-bottom: 12px; }
+.visual-meta .name { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 300; line-height: 1.05; }
+.visual-meta .name em { font-style: italic; }
+.visual-tag { position: absolute; top: 32px; left: 40px; padding: 6px 12px; background: var(--cream); color: var(--clay-deep); border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+.course-feature-body { padding: 56px 56px 48px; display: flex; flex-direction: column; justify-content: space-between; }
+.course-h { font-family: 'Fraunces', serif; font-size: 38px; font-weight: 400; line-height: 1.1; color: var(--court-deep); letter-spacing: -0.015em; margin-bottom: 20px; }
+.course-h em { font-style: italic; color: var(--clay); }
+.course-desc { font-size: 16px; line-height: 1.6; color: var(--ink-soft); margin-bottom: 32px; }
+.course-modules { border-top: 1px solid var(--line); padding-top: 24px; margin-bottom: 32px; }
+.module { display: grid; grid-template-columns: 32px 1fr auto; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.module:last-child { border-bottom: none; }
+.module-num { font-family: 'Fraunces', serif; font-style: italic; color: var(--clay); font-size: 15px; }
+.module-name { color: var(--court-deep); font-weight: 500; }
+.module-len { color: var(--ink-soft); font-size: 12px; letter-spacing: 0.05em; }
+.course-buy { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.price-block .price-label { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; }
+.price-block .price { font-family: 'Fraunces', serif; font-size: 48px; font-weight: 400; color: var(--court-deep); line-height: 1; }
+.price-block .price-note { font-size: 12px; color: var(--ink-soft); margin-top: 6px; }
+
+.coming-row { margin-top: 40px; background: var(--cream); border: 1px solid var(--line); border-radius: 6px; padding: 36px 40px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+.coming-row-text .label { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--clay); font-weight: 700; margin-bottom: 10px; }
+.coming-row-text h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 24px; color: var(--court-deep); margin-bottom: 6px; letter-spacing: -0.01em; }
+.coming-row-text h3 em { font-style: italic; color: var(--clay); }
+.coming-row-text p { font-size: 14px; color: var(--ink-soft); }
+.waitlist-form { display: flex; gap: 0; background: var(--cream-soft); border: 1px solid var(--mist); border-radius: 999px; padding: 4px 4px 4px 20px; min-width: 360px; }
+.waitlist-form input { background: transparent; border: none; outline: none; font: inherit; font-size: 14px; color: var(--ink); flex: 1; padding: 10px 12px 10px 0; }
+.waitlist-form input::placeholder { color: var(--ink-soft); opacity: 0.7; }
+.waitlist-form button { background: var(--court-deep); color: var(--cream); border: none; border-radius: 999px; padding: 10px 22px; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+.waitlist-form button:hover { background: var(--clay); }
+
+/* COACH */
+.coach-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: start; margin-top: 64px; }
+.coach-portrait { position: relative; aspect-ratio: 4/5; background: linear-gradient(165deg, #BD6F4E 0%, #9C5538 50%, #2D4A3E 100%); border-radius: 4px; overflow: hidden; }
+.coach-portrait::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 30%, rgba(245, 239, 226, 0.2) 0%, transparent 60%), radial-gradient(circle at 30% 90%, rgba(26, 24, 21, 0.3) 0%, transparent 50%); }
+.coach-portrait::after { content: "Y.M."; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: 'Fraunces', serif; font-style: italic; font-size: 88px; color: var(--cream); opacity: 0.4; letter-spacing: 0.02em; }
+.coach-portrait-tag { position: absolute; bottom: 24px; left: 24px; color: var(--cream); }
+.coach-portrait-tag .name { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400; }
+.coach-portrait-tag .role { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 4px; opacity: 0.7; }
+.coach-bio h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 30px; line-height: 1.2; color: var(--cream); margin-bottom: 24px; letter-spacing: -0.01em; }
+.coach-bio h3 em { font-style: italic; color: var(--clay); }
+.coach-bio p { font-size: 16px; line-height: 1.7; color: rgba(245, 239, 226, 0.78); margin-bottom: 18px; }
+.coach-credentials { margin-top: 36px; padding-top: 36px; border-top: 1px solid rgba(245, 239, 226, 0.15); display: grid; grid-template-columns: 1fr 1fr; gap: 32px 40px; }
+.credential .label { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--clay); font-weight: 600; margin-bottom: 8px; }
+.credential .value { font-family: 'Fraunces', serif; font-size: 18px; color: var(--cream); line-height: 1.35; font-weight: 400; }
+
+/* HOME OF PADEL */
+.home-of { padding: 140px 0; }
+.home-of-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; margin-top: 60px; }
+.home-of-text .pull { font-family: 'Fraunces', serif; font-style: italic; font-weight: 300; font-size: 36px; line-height: 1.2; color: var(--clay); margin-bottom: 32px; letter-spacing: -0.01em; }
+.home-of-text p { font-size: 16px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 18px; }
+.home-of-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 32px; margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--line); }
+.stat .num { font-family: 'Fraunces', serif; font-size: 56px; font-weight: 300; line-height: 1; color: var(--court-deep); letter-spacing: -0.02em; }
+.stat .num em { font-style: italic; color: var(--clay); }
+.stat .lbl { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); margin-top: 10px; }
+.home-of-visual { position: relative; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; background: linear-gradient(170deg, #E0D2B4 0%, #BD6F4E 100%); }
+.home-of-visual::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 70%, rgba(45, 74, 62, 0.4) 0%, transparent 60%), radial-gradient(circle at 70% 20%, rgba(245, 239, 226, 0.3) 0%, transparent 50%); }
+.home-of-visual::after { content: "MARBELLA"; position: absolute; bottom: 32px; left: 32px; font-family: 'Fraunces', serif; font-style: italic; font-size: 64px; font-weight: 300; color: var(--cream); line-height: 1; letter-spacing: -0.01em; }
+.home-of-visual-coords { position: absolute; top: 32px; left: 32px; color: var(--cream); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.85; line-height: 1.6; }
+
+/* STUDENTS */
+.students-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 64px; }
+.student-card { background: var(--cream); border-radius: 4px; padding: 36px 32px 32px; border: 1px solid var(--line); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.student-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px -20px rgba(26, 44, 36, 0.2); }
+.student-head { display: flex; gap: 16px; margin-bottom: 24px; align-items: center; }
+.student-avatar { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--clay) 0%, var(--court) 100%); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-style: italic; font-size: 22px; color: var(--cream); flex-shrink: 0; }
+.student-meta .name { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 500; color: var(--court-deep); line-height: 1.1; margin-bottom: 4px; }
+.student-meta .place { font-size: 12px; color: var(--ink-soft); letter-spacing: 0.05em; }
+.student-quote { font-family: 'Fraunces', serif; font-size: 17px; line-height: 1.5; color: var(--ink); font-weight: 400; margin-bottom: 24px; }
+.student-result { padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-soft); }
+.student-result span:last-child { color: var(--court); font-weight: 600; }
+
+/* LEAD MAGNET */
+.lead-magnet { position: relative; overflow: hidden; }
+.lead-magnet::before { content: ""; position: absolute; top: -10%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(189, 111, 78, 0.4) 0%, transparent 70%); filter: blur(40px); }
+.lead-magnet-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
+.lead-magnet h2 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(36px, 4vw, 56px); line-height: 1.05; color: var(--cream); margin-bottom: 24px; letter-spacing: -0.02em; }
+.lead-magnet h2 em { font-style: italic; color: var(--clay); }
+.lead-magnet p { font-size: 17px; line-height: 1.55; color: rgba(245, 239, 226, 0.78); max-width: 500px; }
+.lead-form { background: var(--cream); border-radius: 6px; padding: 36px; color: var(--ink); }
+.lead-form-label { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--clay); font-weight: 700; margin-bottom: 12px; }
+.lead-form h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 24px; line-height: 1.2; color: var(--court-deep); margin-bottom: 24px; letter-spacing: -0.01em; }
+.lead-form input[type="text"], .lead-form input[type="email"] { width: 100%; padding: 14px 18px; border: 1px solid var(--mist); border-radius: 4px; background: var(--cream-soft); font: inherit; font-size: 14px; color: var(--ink); margin-bottom: 12px; outline: none; transition: border 0.2s; }
+.lead-form input:focus { border-color: var(--court); }
+.lead-form button { width: 100%; margin-top: 8px; }
+.lead-form-note { font-size: 11px; color: var(--ink-soft); margin-top: 14px; text-align: center; }
+
+/* FINAL CTA */
+.final-cta { text-align: center; padding: 140px 0 120px; }
+.final-cta-eyebrow { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--clay); font-weight: 600; margin-bottom: 24px; }
+.final-cta h2 { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(48px, 6vw, 88px); line-height: 1; letter-spacing: -0.025em; color: var(--court-deep); margin: 0 auto 28px; max-width: 880px; }
+.final-cta h2 em { font-style: italic; color: var(--clay); }
+.final-cta p { font-size: 18px; color: var(--ink-soft); max-width: 560px; margin: 0 auto 40px; }
+.final-cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
+.final-cta .trust-strip { border-top: none; padding-top: 0; justify-content: center; margin-top: 0; }
+
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+  .hero { padding: 56px 0 80px; }
+  .course-feature { grid-template-columns: 1fr; }
+  .course-feature-visual { min-height: 320px; }
+  .course-feature-body { padding: 36px 28px; }
+  .coming-row { grid-template-columns: 1fr; gap: 24px; }
+  .waitlist-form { min-width: 0; width: 100%; }
+  .coach-grid { grid-template-columns: 1fr; gap: 48px; }
+  .coach-credentials { grid-template-columns: 1fr; gap: 24px; }
+  .home-of-grid { grid-template-columns: 1fr; gap: 56px; }
+  .home-of, .final-cta { padding: 80px 0; }
+  .students-grid { grid-template-columns: 1fr; }
+  .lead-magnet-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-meta { grid-template-columns: 1fr 1fr; gap: 24px; }
+}
+@media (max-width: 600px) {
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { justify-content: center; }
+}
 </style>
 
 
@@ -665,6 +812,7 @@ footer {
     </div>
   </div>
 </footer>
+
 
 
 <?php

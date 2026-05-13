@@ -9,7 +9,6 @@ get_header();
 ?>
 
 <style>
-
 /* ============================================================
    PALM COAST PADEL, design system
    Built by Nimlo, April 2026
@@ -763,7 +762,6 @@ footer {
   .final-cta-actions .btn { justify-content: center; }
 }
 
-
 </style>
 
 
@@ -1002,6 +1000,7 @@ footer {
     </div>
   </div>
 </footer>
+
 
 
 <?php
